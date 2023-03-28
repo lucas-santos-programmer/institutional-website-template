@@ -1,0 +1,164 @@
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 639px;
+    min-height: 10vh;
+    margin: 0 auto;
+}
+
+.header{
+    position: relative;
+    background: rgb(20, 19, 19);
+    padding: 0 2rem;
+}
+.header > .container > a{
+    color: aliceblue;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+/* Navigation menu styles */
+.header > .container > nav{
+    position: fixed;
+    top: 10vh;
+    right: 0;
+}
+.header > .container > nav > ul{
+    width: 100vw;
+    height: 90vh;
+    background: rgb(20, 19, 19);
+    list-style: none;
+    padding-top: 20vh;
+}
+.header > .container > nav > ul > li{
+    text-align: center;
+    border-bottom: 1px solid white;
+    margin: 0 2rem 2rem;
+}
+.header > .container > nav > ul > li > a{
+    width: 100%;
+    color: rgb(255, 255, 255);
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    text-decoration: none;
+    text-transform: capitalize;
+    width: inherit;
+    padding-bottom: .4rem;
+    display: block;
+}
+.header > .container > nav.inactive-menu{
+    display: none;
+}
+.header > .container > nav.active-menu{
+    display: block;
+}
+
+/* Hamburguer button */
+.header > .container > #hamburguer{
+    border: none;
+    background: transparent;
+}
+.header > .container > #hamburguer > span{
+    display: block;
+    height: 2px;
+    width: 28px;
+    background: white;
+    margin-bottom: 8px;
+}
+.header > .container > #hamburguer:last-child{
+    margin-bottom: 0;
+}
+
+.header > .container > #hamburguer > .active-slice0{
+    position: relative;
+    top: 5px;
+    transform: rotate(45deg);
+}
+.header > .container > #hamburguer > .active-slice1{
+    display: none;
+}
+.header > .container > #hamburguer > .active-slice2{
+    position: relative;
+    transform: rotate(-45deg);
+    top: -5px;
+}
+
+@media only screen and (min-width: 740px) {
+    .container{
+        max-width: 767px;
+    }
+    
+    .header{
+        padding: 0 4rem;
+    }
+}
+@media only screen and (min-width: 768px){
+    .container{
+        max-width: 1023px;
+    }
+    .header{
+        padding: 0 6rem;
+    }
+    .header > .container > #hamburguer{
+        display: none;
+    }
+
+    .header > .container > nav{
+        position: static;
+    }
+    .header > .container > nav > ul{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: fit-content;
+        height: fit-content;
+        background: transparent;
+        list-style: none;
+        padding-top: 0;
+    }
+    .header > .container > nav > ul > li{
+        text-align: center;
+        border-bottom: 0;
+        margin: 0;
+    }
+    .header > .container > nav > ul > li > a{
+        width: fit;
+        color: rgb(255, 255, 255);
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        text-decoration: none;
+        text-transform: capitalize;
+        width: inherit;
+        padding-bottom: 0;
+        display: inline;
+    }
+    .header > .container > nav.inactive-menu{
+        display: block;
+    }
+}
+@media only screen and (min-width: 1024px){
+    .container{
+        max-width: 1279px;
+    }
+    .header{
+        padding: 0 8rem;
+    }
+}
+@media only screen and (min-width: 1280px){
+    .container{
+        max-width: 1279px;
+    }
+    .header{
+        padding: 0 10rem;
+    }
+}
